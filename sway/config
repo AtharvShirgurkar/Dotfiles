@@ -20,6 +20,7 @@ set $menu wofi --show drun
 set $web_browser brave --password-store=basic
 set $file_browser thunar
 set $office_suite libreoffice
+set $pass-menu wofi-pass
 
 ### Output configuration
 #
@@ -31,7 +32,7 @@ output * bg ~/.wallpapers/minimalistic/romb.png fill
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec sh -c "swaymsg -q '[app_id=\"Alacritty\"] focus' || $term"; workspace number 1
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -40,10 +41,13 @@ output * bg ~/.wallpapers/minimalistic/romb.png fill
     bindsym $mod+d exec $menu
 
     # Start Web browser
-    bindsym $mod+w exec $web_browser
+    bindsym $mod+w exec sh -c "swaymsg -q '[app_id=\"brave-browser\"] focus' || $web_browser"; workspace number 2
 
     # Start File browser
-    bindsym $mod+e exec $file_browser
+    bindsym $mod+e exec sh -c "swaymsg -q '[app_id=\"Thunar\"]' focus || swaymsg -q '[app_id=\"thunar\"]' focus || $file_browser"; workspace number 3
+
+    # Start pass-menu
+    bindsym $mod+p exec $pass-menu
 
     # Start Office Suite
     bindsym $mod+o exec $office_suite
@@ -209,5 +213,5 @@ exec blueman-applet
 gaps outer 2
 gaps inner 10
 default_border pixel 2
-default_floating_border none
+default_floating_border pixel 2
 include ~/.config/sway/config.d/*

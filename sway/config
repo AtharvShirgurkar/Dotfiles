@@ -206,10 +206,6 @@ bindsym $mod+r mode "resize"
 bar {
     swaybar_command waybar
 }
-exec autotiling-rs
-exec nm-applet
-exec swaync
-exec blueman-applet
 gaps outer 2
 gaps inner 10
 default_border pixel 2

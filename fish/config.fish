@@ -7,3 +7,4 @@ set -gx XDG_SCREENSHOTS_DIR ~/Pictures/Screenshots
 set -gx QT_QPA_PLATFORMTHEME qt5ct
 set -gx QT_QPA_PLATFORMTHEME qt6ct
 set -gx GPG_TTY $(tty)
+set -gx TERMINAL /usr/bin/alacritty

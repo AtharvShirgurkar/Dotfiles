@@ -78,6 +78,13 @@ audacious
 wget
 pass
 pass-otp
+virt-viewer
+lxqt-policykit
+gnome-keyring
+dosfstools
+nwg-displays
+kguiaddons
+zbar
 rclone-browser
 	yay -S rclone-browser
 yay

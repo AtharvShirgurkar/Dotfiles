@@ -1,18 +1,25 @@
 return {
   {
-    "github/copilot.vim",
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
     event = "InsertEnter",
     config = function()
-      vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<C-g>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+      require("copilot").setup({
+        suggestion = {
+          auto_trigger = false,
+        },
+        panel = {
+          enabled = false,
+        },
+      })
     end,
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
+    branch = "main",
     dependencies = {
-      { "github/copilot.vim" },
       { "nvim-lua/plenary.nvim" },
+      { "zbirenbaum/copilot.lua" },
     },
     opts = {
       debug = false,

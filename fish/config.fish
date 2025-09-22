@@ -8,3 +8,7 @@ set -gx QT_QPA_PLATFORMTHEME qt5ct
 set -gx QT_QPA_PLATFORMTHEME qt6ct
 set -gx GPG_TTY $(tty)
 set -gx TERMINAL /usr/bin/alacritty
+if status is-interactive
+and not set -q TMUX
+    exec tmux
+end

@@ -32,7 +32,7 @@ output * bg ~/.wallpapers/minimalistic/romb.png fill
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec sh -c "swaymsg -q '[app_id=\"Alacritty\"] focus' || $term"; workspace number 1
+    bindsym $mod+Return exec sh -c "swaymsg -q '[app_id=\"Alacritty\"] focus' || $term"; workspace number 2
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -41,7 +41,7 @@ output * bg ~/.wallpapers/minimalistic/romb.png fill
     bindsym $mod+d exec $menu
 
     # Start Web browser
-    bindsym $mod+w exec sh -c "swaymsg -q '[app_id=\"brave-browser\"] focus' || $web_browser"; workspace number 2
+    bindsym $mod+w exec sh -c "swaymsg -q '[app_id=\"brave-browser\"] focus' || $web_browser"; workspace number 1
 
     # Start File browser
     bindsym $mod+e exec sh -c "swaymsg -q '[app_id=\"Thunar\"]' focus || swaymsg -q '[app_id=\"thunar\"]' focus || $file_browser"; workspace number 3

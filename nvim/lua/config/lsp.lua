@@ -1,6 +1,8 @@
 -- [[ LSPs ]]
 
-local lspconfig = require('lspconfig')
+-- The require('lspconfig') is now deprecated.
+-- Configurations for individual servers are defined here and passed directly to vim.lsp.config.
+-- See https://neovim.io/doc/user/lsp.html for more details on the new API.
 
 require('mason').setup()
 require('mason-lspconfig').setup({
@@ -65,5 +67,10 @@ for server_name, config in pairs(servers) do
     capabilities = capabilities,
   }, config)
 
-  lspconfig[server_name].setup(server_config)
+  -- Use the new vim.lsp.config API to define the server configuration.
+  vim.lsp.config(server_name, server_config)
+
+  -- Use vim.lsp.enable to activate the LSP for the current buffer.
+  -- You can also use this in an autocommand to automatically enable it on certain filetypes.
+  vim.lsp.enable(server_name)
 end

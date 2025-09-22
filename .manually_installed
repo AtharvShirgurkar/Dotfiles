@@ -1,3 +1,6 @@
+sudo
+vi
+network-manager-applet
 alacritty
 sway
 sddm
@@ -66,7 +69,6 @@ zathura-djvu
 zathura-ps
 qt6-wayland
 qt5-wayland
-virtualbox
 qt5ct
 qt6ct
 tmux

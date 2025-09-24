@@ -1,20 +1,8 @@
 -- [[ LSPs ]]
 
--- The require('lspconfig') is now deprecated.
--- Configurations for individual servers are defined here and passed directly to vim.lsp.config.
--- See https://neovim.io/doc/user/lsp.html for more details on the new API.
+-- Use the standard lspconfig setup pattern via mason-lspconfig handlers.
 
 require('mason').setup()
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'jdtls',
-    'ts_ls',
-    'pyright',
-    'clangd',
-    'rust_analyzer',
-    'lua_ls',
-  },
-})
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -59,18 +47,48 @@ local servers = {
       },
     },
   },
+  -- Emmet is a bit of an outlier since it doesn't need external setup like jdtls
+  emmet_ls = {},
 }
 
-for server_name, config in pairs(servers) do
-  local server_config = vim.tbl_deep_extend('force', {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }, config)
+-- Get a list of server names from the keys of the 'servers' table
+local installed_servers = vim.tbl_keys(servers)
 
-  -- Use the new vim.lsp.config API to define the server configuration.
-  vim.lsp.config(server_name, server_config)
+require('mason-lspconfig').setup({
+  -- Configure Mason to ensure these LSPs are installed
+  ensure_installed = installed_servers,
 
-  -- Use vim.lsp.enable to activate the LSP for the current buffer.
-  -- You can also use this in an autocommand to automatically enable it on certain filetypes.
-  vim.lsp.enable(server_name)
-end
+  -- Define a handler function that will be called for all installed LSPs.
+  handlers = {
+    -- This 'handler' will be used for all servers that don't have a specific handler
+    ['*'] = function(server_name)
+      -- Get the custom config from our 'servers' table, or an empty table if none exists
+      local custom_config = servers[server_name] or {}
+
+      -- Set up the LSP with our on_attach, capabilities, and any custom settings
+      require('lspconfig')[server_name].setup(
+        vim.tbl_deep_extend('force', {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        }, custom_config)
+      )
+    end,
+    -- NOTE: jdtls often requires a specific setup. You might need to add a dedicated handler for it later.
+    -- For now, the generic handler should work for simple cases.
+  },
+})
+
+-- REMOVE THE PREVIOUS LOOP:
+-- for server_name, config in pairs(servers) do
+--   local server_config = vim.tbl_deep_extend('force', {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--   }, config)
+--
+--   -- Use the new vim.lsp.config API to define the server configuration.
+--   vim.lsp.config(server_name, server_config)
+--
+--   -- Use vim.lsp.enable to activate the LSP for the current buffer.
+--   -- You can also use this in an autocommand to automatically enable it on certain filetypes.
+--   vim.lsp.enable(server_name)
+-- end

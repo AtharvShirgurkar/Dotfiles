@@ -49,6 +49,7 @@ local servers = {
   },
   -- Emmet is a bit of an outlier since it doesn't need external setup like jdtls
   emmet_ls = {},
+  cssls = {},
 }
 
 -- Get a list of server names from the keys of the 'servers' table

@@ -17,22 +17,23 @@ set $right l
 set $term alacritty
 # Preferred application launcher
 set $menu wofi --show drun
-set $web_browser brave --password-store=basic
+set $web_browser brave
 set $file_browser thunar
 set $office_suite libreoffice
 set $pass-menu wofi-pass
+set $playlist-menu /home/atharv/Scripts/playlistSelect.sh
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.wallpapers/minimalistic/romb.png fill
+output * bg ~/.wallpapers/landscapes/Cloudsday.jpg fill
 
 ### Key bindings
 #
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec sh -c "swaymsg -q '[app_id=\"Alacritty\"] focus' || $term"; workspace number 2
+    bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -41,13 +42,16 @@ output * bg ~/.wallpapers/minimalistic/romb.png fill
     bindsym $mod+d exec $menu
 
     # Start Web browser
-    bindsym $mod+w exec sh -c "swaymsg -q '[app_id=\"brave-browser\"] focus' || $web_browser"; workspace number 1
+    bindsym $mod+w exec $web_browser
 
     # Start File browser
-    bindsym $mod+e exec sh -c "swaymsg -q '[app_id=\"Thunar\"]' focus || swaymsg -q '[app_id=\"thunar\"]' focus || $file_browser"; workspace number 3
+    bindsym $mod+e exec $file_browser
 
     # Start pass-menu
     bindsym $mod+p exec $pass-menu
+
+    # Start playlist-menu
+    bindsym $mod+c exec $playlist-menu
 
     # Start Office Suite
     bindsym $mod+o exec $office_suite
@@ -126,8 +130,8 @@ output * bg ~/.wallpapers/minimalistic/romb.png fill
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    # bindsym $mod+b splith
+    # bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     # bindsym $mod+s layout stacking
@@ -208,6 +212,6 @@ bar {
 }
 gaps outer 2
 gaps inner 10
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 3
+default_floating_border pixel 3
 include ~/.config/sway/config.d/*

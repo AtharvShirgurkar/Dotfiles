@@ -26,6 +26,9 @@ require('lazy').setup('plugins', {
     enabled = false,
   },
 })
-
--- The line below is for the theme. It should be at the end of your init.lua.
-vim.cmd.colorscheme 'catppuccin'
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" })
+vim.api.nvim_set_hl(0, "NonText", { bg = "none" })

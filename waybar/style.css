@@ -22,11 +22,7 @@ window#waybar {
   border: none;
   transition: background-color 0.2s ease;
 }
-#workspaces button.focused {
-  color: #24273A;
-  background-color: #C6A0F6;
-  font-weight: bold;
-}
+#workspaces button.focused,
 #workspaces button.active {
   color: #24273A;
   background-color: #C6A0F6;
@@ -44,9 +40,6 @@ window#waybar {
   color: #CAD3F5;
   transition: background-color 0.2s ease;
   border-radius: 6px; 
-}
-#clock:hover {
-  background-color: #494D64;
 }
 #tray {
   background-color: #363A4F;
@@ -75,9 +68,6 @@ window#waybar {
 #pulseaudio.muted {
   color: #F38BA8;
 }
-#pulseaudio:hover {
-  background-color: #494D64;
-}
 #idle_inhibitor {
   padding: 2px 12px; 
   margin: 0 2px;
@@ -86,18 +76,76 @@ window#waybar {
   transition: background-color 0.2s ease;
   border-radius: 6px; 
 }
-
-#idle_inhibitor:hover {
-  background-color: #494D64;
-}
-
 #idle_inhibitor.activated {
   color: #24273A;
   background-color: #C6A0F6;
   font-weight: bold;
 }
-
 #idle_inhibitor.deactivated {
   background-color: #363A4F; 
   color: #CAD3F5;
+}
+#battery {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #363A4F;
+  color: #CAD3F5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+#battery.charging {
+  color: #A6E3A1;
+}
+#battery.discharging.warning {
+  color: #EBCB8B;
+  font-weight: bold;
+}
+#battery.discharging.critical {
+  color: #F38BA8;
+  font-weight: bold;
+}
+#battery.full {
+  background-color: #363A4F;
+  color: #A6E3A1;
+}
+#cpu {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #363A4F;
+  color: #CAD3F5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+#cpu.warning {
+  color: #EBCB8B;
+  font-weight: bold;
+}
+#cpu.critical {
+  color: #F38BA8;
+  font-weight: bold;
+  background-color: #494D64;
+}
+#scratchpad {
+    padding: 0 10px;
+    margin: 0 2px;
+    min-width: 0;
+    border: none;
+    transition: background-color 0.2s ease;
+    color: #24273A; /* Active text color */
+    background-color: #C6A0F6; /* Active background color */
+    font-weight: bold;
+}
+#scratchpad.empty {
+    color: #CAD3F5;
+    background-color: #363A4F;
+    font-weight: normal;
+}
+#clock:hover,
+#tray:hover,
+#pulseaudio:hover,
+#idle_inhibitor:hover,
+#battery:hover,
+#cpu:hover,
+#scratchpad:hover{
+  background-color: #494D64;
 }

@@ -1,6 +1,7 @@
 {
   "modules-left": [
     "sway/workspaces",
+    "sway/scratchpad",
     "hyprland/workspaces"
   ],
   "modules-center": [
@@ -10,6 +11,8 @@
   "modules-right": [
     "idle_inhibitor",
     "pulseaudio",
+    "cpu",
+    "battery",
     "tray",
     "clock"
   ],
@@ -20,8 +23,16 @@
     "window-format": "<span color='#e0e0e0'>{name}</span>",
     "window-rewrite": {
       "title<.*youtube.*>": "",
-      "class<.*sonyliv.*>": "",
+      "class<.*sonyliv.*>": "󰎁",
       "title<.*gemini.*>": "",
+      "class<libreoffice-startcenter>": "󰈙",
+      "class<.*libreoffice-writer.*>": "",
+      "class<.*libreoffice-calc.*>": "",
+      "class<.*libreoffice-impress.*>": "",
+      "class<.*libreoffice-draw.*>": "󰇞",
+      "class<.*libreoffice-base.*>": "",
+      "class<.*libreoffice-math.*>": "",
+      "title<.*Presenting.*>": "󰐨",
       "alacritty": "",
       "class<firefox>": "",
       "class<thunar>": "󰉓",
@@ -45,14 +56,29 @@
       "(.*) - zsh": " $1"
     }
   },
+  "sway/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": ["", ""],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
   "hyprland/workspaces": {
     "format": "{name}  {windows}",
     "format-window-separator": " ",
     "window-rewrite-default": "",
     "window-rewrite": {
       "title<.*youtube.*>": "",
-      "class<.*sonyliv.*>": "",
+      "class<.*sonyliv.*>": "󰎁",
       "title<.*gemini.*>": "",
+      "class<libreoffice-startcenter>": "󰈙",
+      "class<.*libreoffice-writer.*>": "",
+      "class<.*libreoffice-calc.*>": "",
+      "class<.*libreoffice-impress.*>": "",
+      "class<.*libreoffice-draw.*>": "󰇞",
+      "class<.*libreoffice-base.*>": "",
+      "class<.*libreoffice-math.*>": "",
+      "title<.*Presenting.*>": "󰐨",
       "alacritty": "",
       "class<firefox>": "",
       "class<thunar>": "󰉓",
@@ -74,7 +100,7 @@
       "(.*) — Konsole": " $1",        // Konsole icon
       "Telegram": " Telegram",         // Telegram icon
       "(.*) - zsh": " $1"             // Terminal icon for zsh
-    }
+    },
     // "separate-outputs": true // Uncomment this line if you want the window title from the focused window on that specific monitor/output.
   },
   "tray": {
@@ -86,7 +112,7 @@
     "format-alt": "{:%A, %B %d, %Y (%R)}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
-      "mode"          : "year",
+      "mode"          : "month",
       "mode-mon-col"  : 3,
       "weeks-pos"     : "right",
       "on-scroll"     : 1,
@@ -116,7 +142,7 @@
     "timeout": 30.5
   },
   "pulseaudio": {
-    "format": "{volume}% {icon} {format_source}",
+    "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
@@ -132,5 +158,30 @@
       "default": ["", "", ""]
     },
     "on-click": "pavucontrol"
+  },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "events": {
+      "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+      "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+      "on-charging-100": "notify-send -u normal 'Battery Full!'"
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "{usage}% {icon}",
+    "format-icons": ["", "", "", ""], // A simple set of icons for consistent display
+    "states": {
+      "warning": 50,
+      "critical": 80
+    },
+    "max-length": 25
   },
 }

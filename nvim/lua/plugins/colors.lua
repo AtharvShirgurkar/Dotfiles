@@ -1,9 +1,19 @@
 return {
   'uga-rosa/ccc.nvim',
-  event = 'BufReadPre', -- Load it early for a smooth experience
+  cmd = 'CccPick',
+  keys = {
+    {
+      '<leader>cp',
+      '<cmd>CccPick<CR>',
+      mode = 'n',
+      desc = 'Open Color Picker (ccc.nvim)',
+    },
+  },
   config = function()
     require('ccc').setup({
-      -- Your configuration comes here
+      highlighter = {
+        auto_enable = true,
+      },
     })
   end,
 }

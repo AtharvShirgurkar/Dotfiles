@@ -24,6 +24,8 @@
     "window-rewrite": {
       "title<.*youtube.*>": "",
       "class<.*sonyliv.*>": "󰎁",
+      "class<.*calibre.*>": "",
+      "title<.*imv.*>": "",
       "title<.*gemini.*>": "",
       "class<libreoffice-startcenter>": "󰈙",
       "class<.*libreoffice-writer.*>": "",
@@ -70,7 +72,9 @@
     "window-rewrite": {
       "title<.*youtube.*>": "",
       "class<.*sonyliv.*>": "󰎁",
+      "class<.*calibre.*>": "",
       "title<.*gemini.*>": "",
+      "title<.*imv.*>": "",
       "class<libreoffice-startcenter>": "󰈙",
       "class<.*libreoffice-writer.*>": "",
       "class<.*libreoffice-calc.*>": "",
@@ -184,4 +188,5 @@
     },
     "max-length": 25
   },
+  "output": "eDP-1",
 }

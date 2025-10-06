@@ -17,7 +17,7 @@ set $right l
 set $term alacritty
 # Preferred application launcher
 set $menu wofi --show drun
-set $web_browser brave
+set $web_browser vivaldi
 set $file_browser thunar
 set $office_suite libreoffice
 set $pass-menu wofi-pass
@@ -26,7 +26,7 @@ set $playlist-menu /home/atharv/Scripts/playlistSelect.sh
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.wallpapers/landscapes/Cloudsday.jpg fill
+output * bg ~/.current_wallpaper fill
 
 ### Key bindings
 #

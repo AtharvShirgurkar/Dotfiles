@@ -79,7 +79,6 @@ wget
 pass
 pass-otp
 virt-viewer
-lxqt-policykit
 gnome-keyring
 dosfstools
 nwg-displays

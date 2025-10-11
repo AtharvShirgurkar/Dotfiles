@@ -17,7 +17,7 @@ set $right l
 set $term alacritty
 # Preferred application launcher
 set $menu wofi --show drun
-set $web_browser vivaldi
+set $web_browser brave
 set $file_browser thunar
 set $office_suite libreoffice
 set $pass-menu wofi-pass

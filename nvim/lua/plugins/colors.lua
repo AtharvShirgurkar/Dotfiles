@@ -1,19 +1,29 @@
 return {
-  'uga-rosa/ccc.nvim',
-  cmd = 'CccPick',
-  keys = {
-    {
-      '<leader>cp',
-      '<cmd>CccPick<CR>',
-      mode = 'n',
-      desc = 'Open Color Picker (ccc.nvim)',
-    },
-  },
+  'norcalli/nvim-colorizer.lua',
+
   config = function()
-    require('ccc').setup({
-      highlighter = {
-        auto_enable = true,
+    require('colorizer').setup({
+      user_default_options = {
+        mode = 'background',
+        names = true,
+        always_update = true,
       },
+
+      filetypes = {
+        'css',
+        'scss',
+        'less',
+        'html',
+        'javascript',
+        'typescript',
+        'lua',
+      },
+    })
+
+    vim.api.nvim_create_autocmd('VimEnter', {
+      callback = function()
+        vim.cmd('ColorizerAttach')
+      end,
     })
   end,
 }

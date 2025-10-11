@@ -10,9 +10,9 @@ return {
       indent = {
         char = "▏",
       },
-      -- Disabled: This is the feature that causes the 'IblScope' error 
+      -- Disabled: This is the feature that causes the 'IblScope' error
       -- when the highlight group is not available.
-      scope = { enabled = false } 
+      scope = { enabled = false }
     })
   end,
 }

@@ -143,7 +143,6 @@
       "activated": "",
       "deactivated": ""
     },
-    "timeout": 30.5
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",

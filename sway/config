@@ -22,6 +22,7 @@ set $file_browser thunar
 set $office_suite libreoffice
 set $pass-menu wofi-pass --insensitive
 set $playlist-menu /home/atharv/Scripts/playlistSelect.sh
+set $rclone-find-and-open /home/atharv/Scripts/wofi_script.sh
 
 ### Output configuration
 #
@@ -52,6 +53,9 @@ output * bg ~/.current_wallpaper fill
 
     # Start playlist-menu
     bindsym $mod+c exec $playlist-menu
+
+    # Start rclone-menu
+    bindsym $mod+n exec $rclone-find-and-open
 
     # Start Office Suite
     bindsym $mod+o exec $office_suite

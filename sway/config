@@ -21,8 +21,8 @@ set $web_browser firefox
 set $file_browser thunar
 set $office_suite libreoffice
 set $pass-menu wofi-pass --insensitive
-set $playlist-menu /home/atharv/Scripts/playlistSelect.sh
-set $rclone-find-and-open /home/atharv/Scripts/wofi_script.sh
+set $playlist-menu ~/.config/sway/Scripts/playlistSelect.sh
+set $rclone-find-and-open ~/.config/sway/Scripts/wofi_script.sh
 
 ### Output configuration
 #

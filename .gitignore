@@ -1,2 +1,2 @@
 nvim/lazy-lock.json
-echo "sway/Scripts/rclone_master_index.txt" >> .gitignore
+sway/Scripts/rclone_master_index.txt

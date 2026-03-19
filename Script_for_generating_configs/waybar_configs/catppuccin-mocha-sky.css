@@ -1,0 +1,182 @@
+/* =============================================================================
+ * CATPPUCCIN MOCHA - SKY
+ * =========================================================================== */
+
+* {
+  font-family: "Noto Sans", "Font Awesome 7 Free", "Font Awesome 7 Brands", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+window#waybar {
+  background: #1e1e2e; /* Base Color */
+  color: #cdd6f4;
+  opacity: 0.95;
+}
+
+#waybar {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+#workspaces {
+  padding: 0 5px;
+  margin: 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  margin: 0 2px;
+  min-width: 0;
+  color: #cdd6f4;
+  background-color: #313244; /* Module BG */
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: #1e1e2e; /* Text becomes base color on accent background for contrast */
+  background-color: #89dceb; /* Chosen Accent */
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  color: #1e1e2e;
+  background-color: #f38ba8;
+  font-weight: bold;
+}
+
+#clock {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #313244;
+  color: #cdd6f4;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#tray {
+  background-color: #313244;
+  color: #cdd6f4;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#tray > .item {
+  padding: 0 5px;
+  color: #cdd6f4;
+  min-width: 0;
+}
+
+#tray > .item:hover {
+  background-color: #45475a; /* Hover Color */
+}
+
+#pulseaudio {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #313244;
+  color: #cdd6f4;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#pulseaudio.muted {
+  color: #f38ba8;
+}
+
+#idle_inhibitor {
+  padding: 2px 12px;
+  margin: 0 2px;
+  background-color: #313244;
+  color: #cdd6f4;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#idle_inhibitor.activated {
+  color: #1e1e2e;
+  background-color: #89dceb;
+  font-weight: bold;
+}
+
+#idle_inhibitor.deactivated {
+  background-color: #313244;
+  color: #cdd6f4;
+}
+
+#battery {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #313244;
+  color: #cdd6f4;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#battery.charging {
+  color: #a6e3a1;
+}
+
+#battery.discharging.warning {
+  color: #f9e2af;
+  font-weight: bold;
+}
+
+#battery.discharging.critical {
+  color: #f38ba8;
+  font-weight: bold;
+}
+
+#battery.full {
+  background-color: #313244;
+  color: #a6e3a1;
+}
+
+#cpu {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #313244;
+  color: #cdd6f4;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#cpu.warning {
+  color: #f9e2af;
+  font-weight: bold;
+}
+
+#cpu.critical {
+  color: #f38ba8;
+  font-weight: bold;
+  background-color: #45475a;
+}
+
+#scratchpad {
+   padding: 0 10px;
+   margin: 0 2px;
+   min-width: 0;
+   border: none;
+   transition: background-color 0.2s ease;
+   color: #1e1e2e;
+   background-color: #89dceb;
+   font-weight: bold;
+}
+
+#scratchpad.empty {
+   color: #cdd6f4;
+   background-color: #313244;
+   font-weight: normal;
+}
+
+#clock:hover,
+#tray:hover,
+#pulseaudio:hover,
+#idle_inhibitor:hover,
+#battery:hover,
+#cpu:hover,
+#scratchpad:hover {
+  background-color: #45475a;
+}

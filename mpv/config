@@ -1,0 +1,38 @@
+# ==========================================
+# GLOBAL SETTINGS
+# ==========================================
+save-position-on-quit=yes
+profile-restore=copy
+msg-color=yes
+cursor-autohide=1000
+vo=gpu-next
+gpu-context=wayland
+
+# ==========================================
+# POWERSAVE (Battery Mode - Intel Only)
+# ==========================================
+[powersave]
+profile=fast
+hwdec=vaapi
+interpolation=no
+deband=no
+dither=no
+correct-downscaling=no
+hdr-compute-peak=no
+cache=yes
+demuxer-max-bytes=150MiB
+demuxer-max-back-bytes=50MiB
+
+# ==========================================
+# BEAST MODE (Plugged In - NVIDIA Power)
+# ==========================================
+[beast-mode]
+profile=high-quality
+hwdec=nvdec-copy
+video-sync=display-resample
+interpolation=yes
+tscale=oversample
+scale=ewa_lanczossharp
+deband=yes
+deband-iterations=4
+deband-threshold=48

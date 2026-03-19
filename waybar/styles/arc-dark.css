@@ -1,0 +1,181 @@
+/* =============================================================================
+ * ARC-DARK STYLE
+ * =========================================================================== */
+
+* {
+  font-family:"Noto Sans", "Font Awesome 7 Free", "Font Awesome 7 Brands", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+window#waybar {
+  background: rgba(47, 52, 63, 0.95); /* Arc Background */
+  color: white;
+}
+
+#waybar {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+#workspaces {
+  padding: 0 5px;
+  margin: 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  margin: 0 2px;
+  min-width: 0;
+  color: #d3dae3; /* Arc Text */
+  background-color: #383c4a; /* Arc Module BG */
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: #ffffff;
+  background-color: #5294e2; /* Arc Blue */
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  color: #ffffff;
+  background-color: #cf6a4c; /* Arc Red */
+  font-weight: bold;
+}
+
+#clock {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #383c4a;
+  color: #d3dae3;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#tray {
+  background-color: #383c4a;
+  color: #d3dae3;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#tray > .item {
+  padding: 0 5px;
+  color: #d3dae3;
+  min-width: 0;
+}
+
+#tray > .item:hover {
+  background-color: #404552; /* Arc Hover */
+}
+
+#pulseaudio {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #383c4a;
+  color: #d3dae3;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#pulseaudio.muted {
+  color: #cf6a4c; /* Arc Red */
+}
+
+#idle_inhibitor {
+  padding: 2px 12px; 
+  margin: 0 2px;
+  background-color: #383c4a; 
+  color: #d3dae3;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#idle_inhibitor.activated {
+  color: #ffffff;
+  background-color: #5294e2; /* Arc Blue */
+  font-weight: bold;
+}
+
+#idle_inhibitor.deactivated {
+  background-color: #383c4a; 
+  color: #d3dae3;
+}
+
+#battery {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #383c4a;
+  color: #d3dae3;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#battery.charging {
+  color: #98c379; /* Arc Green */
+}
+
+#battery.discharging.warning {
+  color: #e5c07b; /* Arc Yellow */
+  font-weight: bold;
+}
+
+#battery.discharging.critical {
+  color: #cf6a4c; /* Arc Red */
+  font-weight: bold;
+}
+
+#battery.full {
+  background-color: #383c4a;
+  color: #98c379;
+}
+
+#cpu {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #383c4a;
+  color: #d3dae3;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#cpu.warning {
+  color: #e5c07b;
+  font-weight: bold;
+}
+
+#cpu.critical {
+  color: #cf6a4c;
+  font-weight: bold;
+  background-color: #404552;
+}
+
+#scratchpad {
+    padding: 0 10px;
+    margin: 0 2px;
+    min-width: 0;
+    border: none;
+    transition: background-color 0.2s ease;
+    color: #ffffff; 
+    background-color: #5294e2; /* Active: Arc Blue */
+    font-weight: bold;
+}
+
+#scratchpad.empty {
+    color: #d3dae3;
+    background-color: #383c4a;
+    font-weight: normal;
+}
+
+#clock:hover,
+#tray:hover,
+#pulseaudio:hover,
+#idle_inhibitor:hover,
+#battery:hover,
+#cpu:hover,
+#scratchpad:hover {
+  background-color: #404552; /* Arc Hover color */
+}

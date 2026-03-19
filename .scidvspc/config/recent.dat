@@ -1,0 +1,14 @@
+# Scid vs. PC recent files list
+
+set recentFiles(limit) 10
+
+set recentFiles(menu) 5
+
+set recentFiles(extra) 5
+
+set recentFiles(gamehistory) 5
+
+set recentFiles(playernames) 10
+
+set recentFiles(data) {/home/atharv/Programs/fetch_chess_com_games/atharvshirgurkar/bullet/black_bullet.si4 {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update14.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update12.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update13.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Mega Database 2026.si4} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update11.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update10.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update09.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update08.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update07.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update06.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update05.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update04.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update03.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update02.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/MegaBase2026-Update01.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Updates/Updates 1-9.pgn} {/home/atharv/Chess/Bases/Mega Database 2026/Mega Database.si4}}
+

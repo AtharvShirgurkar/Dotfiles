@@ -1,0 +1,26 @@
+# Analysis engines list file for Scid 5.1.2.19-17-gcc35b698 with UCI support
+
+engine {
+  Name {Stockfish 18}
+  Cmd  /home/atharv/Chess/Engines/stockfish/stockfish-ubuntu-x86-64-avx2
+  Args {}
+  Dir  .
+  Elo  3600
+  Time 1773213977
+  URL  {white 1 word false normal {}}
+  UCI 1
+  UCIoptions {{Hash 2048} {MultiPV 3}}
+}
+
+engine {
+  Name {Remote Stockfish}
+  Cmd  /home/atharv/Chess/Engines/remote_stockfish.sh
+  Args {}
+  Dir  .
+  Elo  3600
+  Time 1772436926
+  URL  {}
+  UCI 1
+  UCIoptions {}
+}
+

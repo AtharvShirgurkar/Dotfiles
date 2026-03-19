@@ -1,0 +1,181 @@
+/* =============================================================================
+ * ADWAITA-DARK STYLE
+ * =========================================================================== */
+
+* {
+  font-family: "Noto Sans", "Font Awesome 7 Free", "Font Awesome 7 Brands", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+window#waybar {
+  background: #1d1d1d; /* Adwaita HeaderBar BG */
+  color: white;
+}
+
+#waybar {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+#workspaces {
+  padding: 0 5px;
+  margin: 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  margin: 0 2px;
+  min-width: 0;
+  color: #ffffff;
+  background-color: #303030; /* Adwaita element BG */
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: #ffffff;
+  background-color: #3584e4; /* Adwaita Blue */
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  color: #ffffff;
+  background-color: #ed333b; /* Adwaita Red */
+  font-weight: bold;
+}
+
+#clock {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #303030;
+  color: #ffffff;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#tray {
+  background-color: #303030;
+  color: #ffffff;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#tray > .item {
+  padding: 0 5px;
+  color: #ffffff;
+  min-width: 0;
+}
+
+#tray > .item:hover {
+  background-color: #454545; /* Adwaita Hover */
+}
+
+#pulseaudio {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #303030;
+  color: #ffffff;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#pulseaudio.muted {
+  color: #ed333b; /* Adwaita Red */
+}
+
+#idle_inhibitor {
+  padding: 2px 12px; 
+  margin: 0 2px;
+  background-color: #303030; 
+  color: #ffffff;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#idle_inhibitor.activated {
+  color: #ffffff;
+  background-color: #3584e4; /* Adwaita Blue */
+  font-weight: bold;
+}
+
+#idle_inhibitor.deactivated {
+  background-color: #303030; 
+  color: #ffffff;
+}
+
+#battery {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #303030;
+  color: #ffffff;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#battery.charging {
+  color: #26a269; /* Adwaita Green */
+}
+
+#battery.discharging.warning {
+  color: #e5a50a; /* Adwaita Yellow/Orange */
+  font-weight: bold;
+}
+
+#battery.discharging.critical {
+  color: #ed333b; /* Adwaita Red */
+  font-weight: bold;
+}
+
+#battery.full {
+  background-color: #303030;
+  color: #26a269;
+}
+
+#cpu {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #303030;
+  color: #ffffff;
+  transition: background-color 0.2s ease;
+  border-radius: 6px; 
+}
+
+#cpu.warning {
+  color: #e5a50a;
+  font-weight: bold;
+}
+
+#cpu.critical {
+  color: #ed333b;
+  font-weight: bold;
+  background-color: #454545;
+}
+
+#scratchpad {
+    padding: 0 10px;
+    margin: 0 2px;
+    min-width: 0;
+    border: none;
+    transition: background-color 0.2s ease;
+    color: #ffffff; 
+    background-color: #3584e4; /* Active: Adwaita Blue */
+    font-weight: bold;
+}
+
+#scratchpad.empty {
+    color: #ffffff;
+    background-color: #303030;
+    font-weight: normal;
+}
+
+#clock:hover,
+#tray:hover,
+#pulseaudio:hover,
+#idle_inhibitor:hover,
+#battery:hover,
+#cpu:hover,
+#scratchpad:hover {
+  background-color: #454545; /* Adwaita Hover */
+}

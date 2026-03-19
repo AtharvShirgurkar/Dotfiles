@@ -1,0 +1,211 @@
+{
+  "modules-left": [
+    "sway/workspaces",
+    "hyprland/workspaces",
+    "sway/scratchpad"
+  ],
+  "modules-center": [
+    "sway/window",
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "pulseaudio",
+    "cpu",
+    "battery",
+    "tray",
+    "clock"
+  ],
+  "sway/workspaces": {
+    "format": "<span size='larger'>{name}</span> {windows}",
+    "format-window-separator": " ",
+    "window-rewrite-default": "{name}",
+    "window-format": "<span color='#e0e0e0'>{name}</span>",
+    "window-rewrite": {
+      "class<.*[Aa]lacritty.*>": "",
+
+      "class<.*[Ff]irefox.*>": "",
+      "class<.*[Bb]rave-browser.*> title<.*[Gg]ithub.*>": "",
+      "class<.*[Bb]rave-browser.*>": "",
+
+      "class<.*[Tt]hunar.*>": "",
+      "class<.*rclone.*>": "",
+
+      "class<.*[Cc]ode.*>": "",
+      "title<.* - (.*) - VSCodium>": "codium $1",
+      "class<.*[Gg]ithub.*>": "",
+
+      "class<.*libreoffice-startcenter.*>": "󰈙",
+      "class<.*libreoffice-writer.*>": "",
+      "class<.*libreoffice-calc.*>": "",
+      "class<.*libreoffice-impress.*>": "",
+      "class<.*libreoffice-draw.*>": "󰇞",
+      "class<.*libreoffice-base.*>": "",
+      "class<.*libreoffice-math.*>": "",
+      "class<.*[Cc]alibre.*>": "",
+      "class<.*zathura.*>": "",
+
+      "class<.*[Mm]pv.*>": "",
+      "class<.*Sony LIV.*>": "󰎁",
+      "title<.*imv.*>": "",
+      "title<.*youtube.*>": "",
+
+      "title<.*gemini.*>": "",
+      "title<.*Presenting.*>": "󰐨"
+    }
+  },
+  "sway/window": {
+    "format": " {title} ",
+    "expand": true,
+    "icon": true,
+    "icon-size": 20,
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "󰈹 $1",
+      "VSCodium": "󰨞 VSCodium",
+      "(.*) — Konsole": " $1",
+      "Telegram": " Telegram",
+      "(.*) - zsh": " $1"
+    }
+  },
+  "sway/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": ["", ""],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
+  "hyprland/workspaces": {
+    "format": "<span size='larger'>{name}</span> {windows}",
+    "format-window-separator": " ",
+    "window-rewrite-default": "{name}",
+    "window-format": "<span color='#e0e0e0'>{name}</span>",
+    "show-special": true,
+    "special-visible-only": true,
+    "window-rewrite": {
+      "class<.*[Aa]lacritty.*>": "",
+
+      "class<.*[Ff]irefox.*>": "",
+      "class<.*[Bb]rave-browser.*> title<.*[Gg]ithub.*>": "",
+      "class<.*[Bb]rave-browser.*>": "",
+
+      "class<.*[Tt]hunar.*>": "",
+      "class<.*rclone.*>": "",
+
+      "class<.*[Cc]ode.*>": "",
+      "title<.* - (.*) - VSCodium>": "codium $1",
+      "class<.*[Gg]ithub.*>": "",
+
+      "class<.*libreoffice-startcenter.*>": "󰈙",
+      "class<.*libreoffice-writer.*>": "",
+      "class<.*libreoffice-calc.*>": "",
+      "class<.*libreoffice-impress.*>": "",
+      "class<.*libreoffice-draw.*>": "󰇞",
+      "class<.*libreoffice-base.*>": "",
+      "class<.*libreoffice-math.*>": "",
+      "class<.*[Cc]alibre.*>": "",
+      "class<.*zathura.*>": "",
+
+      "class<.*[Mm]pv.*>": "",
+      "class<.*Sony LIV.*>": "󰎁",
+      "title<.*imv.*>": "",
+      "title<.*youtube.*>": "",
+
+      "title<.*gemini.*>": "",
+      "title<.*Presenting.*>": "󰐨"
+    }
+  },
+  "hyprland/window": {
+    "format": " {title} ",
+    "expand": true,
+    "icon": true,
+    "icon-size": 20,
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "󰈹 $1",
+      "VSCodium": "󰨞 VSCodium",
+      "(.*) — Konsole": " $1",
+      "Telegram": " Telegram",
+      "(.*) - zsh": " $1"
+    }
+  },
+  "tray": {
+    "icon-size": 25,
+    "spacing": 0
+  },
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode"          : "month",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "on-click-right": "mode",
+      "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "battery": {
+    "interval": 10,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "events": {
+      "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+      "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+      "on-charging-100": "notify-send -u normal 'Battery Full!'"
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "{usage}% {icon}",
+    "format-icons": ["", "", "", ""], // A simple set of icons for consistent display
+    "states": {
+      "warning": 50,
+      "critical": 80
+    },
+    "max-length": 25
+  },
+  "output": ["eDP-2", "eDP-1"] 
+}

@@ -1,0 +1,3 @@
+# Ignore local assets and binaries
+assets/
+*.tar.xz

@@ -1,0 +1,14 @@
+# Analysis Engines configuration for Scid vs. PC 4.26
+
+engine {
+  Name Stockfish
+  Cmd  /home/atharv/Chess/Engines/stockfish/stockfish-ubuntu-x86-64-avx2
+  Args {}
+  Dir  .
+  Elo  3600
+  Time 1769872393
+  URL  {}
+  UCI  1
+  UCIoptions {}
+}
+

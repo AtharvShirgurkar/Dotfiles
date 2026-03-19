@@ -1,0 +1,10 @@
+# Scid 5.1.2.19-17-gcc35b698 recent files list
+
+set recentFiles(limit) 10
+
+set recentFiles(menu) 9
+
+set recentFiles(extra) 9
+
+set recentFiles(data) {/home/atharv/Programs/fetch_chess_com_games/atharvshirgurkar/blitz_scid5.si5 /home/atharv/Programs/fetch_chess_com_games/atharvshirgurkar/daily_scid5.si5 /home/atharv/Programs/fetch_chess_com_games/atharvshirgurkar/rapid_scid5.si5 /home/atharv/Programs/fetch_chess_com_games/atharvshirgurkar/bullet_scid5.si5 /home/atharv/Programs/fetch_chess_com_games/atharvshirgurkar/blitz_all.si5 /home/atharv/Programs/fetch_chess_com_games/atharvshirgurkar/daily_scid4.si4 /home/atharv/Chess/Bases/atharvshirgurkar/bullet_games.pgn {/home/atharv/Chess/Bases/Mega Database 2026/Mega Database 2026.si5} /home/atharv/Chess/Bases/atharvshirgurkar/rapid_games.pgn /tmp/scid_chesscom_1770827693/chesscom_games.pgn {/home/atharv/Chess/Bases/Power Games 2025/Power Games 2025.si5}}
+

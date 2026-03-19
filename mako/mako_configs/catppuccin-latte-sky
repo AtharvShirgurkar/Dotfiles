@@ -1,0 +1,45 @@
+# Mako Config: Catppuccin Latte Sky
+
+# --- Layout & Geometry ---
+font=monospace 11
+width=350
+height=150
+margin=20
+padding=15
+border-size=2
+border-radius=6
+icons=1
+max-icon-size=48
+icon-path=/usr/share/icons/hicolor
+markup=1
+actions=1
+history=1
+text-alignment=left
+default-timeout=5000
+ignore-timeout=0
+max-visible=5
+layer=overlay
+anchor=top-right
+
+# --- Formatting ---
+format=<b>%s</b>\n%b
+
+# --- Input / Binding ---
+on-button-left=invoke-default-action
+on-button-right=dismiss
+on-button-middle=dismiss-all
+
+# --- Colors ---
+background-color=#eff1f5
+text-color=#4c4f69
+border-color=#04a5e5
+progress-color=over #ccd0da
+
+# --- Urgency Overrides ---
+[urgency=low]
+border-color=#eff1f5
+default-timeout=2000
+
+[urgency=high]
+border-color=#04a5e5
+default-timeout=0

@@ -1,0 +1,2 @@
+include ~/.config/sway/colors/color.conf
+include ~/.config/sway/config.d/*.conf

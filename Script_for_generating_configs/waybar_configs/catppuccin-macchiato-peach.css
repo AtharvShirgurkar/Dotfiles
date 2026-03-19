@@ -1,0 +1,182 @@
+/* =============================================================================
+ * CATPPUCCIN MACCHIATO - PEACH
+ * =========================================================================== */
+
+* {
+  font-family: "Noto Sans", "Font Awesome 7 Free", "Font Awesome 7 Brands", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+window#waybar {
+  background: #24273a; /* Base Color */
+  color: #cad3f5;
+  opacity: 0.95;
+}
+
+#waybar {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+#workspaces {
+  padding: 0 5px;
+  margin: 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  margin: 0 2px;
+  min-width: 0;
+  color: #cad3f5;
+  background-color: #363a4f; /* Module BG */
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: #24273a; /* Text becomes base color on accent background for contrast */
+  background-color: #f5a97f; /* Chosen Accent */
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  color: #24273a;
+  background-color: #ed8796;
+  font-weight: bold;
+}
+
+#clock {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #363a4f;
+  color: #cad3f5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#tray {
+  background-color: #363a4f;
+  color: #cad3f5;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#tray > .item {
+  padding: 0 5px;
+  color: #cad3f5;
+  min-width: 0;
+}
+
+#tray > .item:hover {
+  background-color: #494d64; /* Hover Color */
+}
+
+#pulseaudio {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #363a4f;
+  color: #cad3f5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#pulseaudio.muted {
+  color: #ed8796;
+}
+
+#idle_inhibitor {
+  padding: 2px 12px;
+  margin: 0 2px;
+  background-color: #363a4f;
+  color: #cad3f5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#idle_inhibitor.activated {
+  color: #24273a;
+  background-color: #f5a97f;
+  font-weight: bold;
+}
+
+#idle_inhibitor.deactivated {
+  background-color: #363a4f;
+  color: #cad3f5;
+}
+
+#battery {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #363a4f;
+  color: #cad3f5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#battery.charging {
+  color: #a6da95;
+}
+
+#battery.discharging.warning {
+  color: #eed49f;
+  font-weight: bold;
+}
+
+#battery.discharging.critical {
+  color: #ed8796;
+  font-weight: bold;
+}
+
+#battery.full {
+  background-color: #363a4f;
+  color: #a6da95;
+}
+
+#cpu {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #363a4f;
+  color: #cad3f5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#cpu.warning {
+  color: #eed49f;
+  font-weight: bold;
+}
+
+#cpu.critical {
+  color: #ed8796;
+  font-weight: bold;
+  background-color: #494d64;
+}
+
+#scratchpad {
+   padding: 0 10px;
+   margin: 0 2px;
+   min-width: 0;
+   border: none;
+   transition: background-color 0.2s ease;
+   color: #24273a;
+   background-color: #f5a97f;
+   font-weight: bold;
+}
+
+#scratchpad.empty {
+   color: #cad3f5;
+   background-color: #363a4f;
+   font-weight: normal;
+}
+
+#clock:hover,
+#tray:hover,
+#pulseaudio:hover,
+#idle_inhibitor:hover,
+#battery:hover,
+#cpu:hover,
+#scratchpad:hover {
+  background-color: #494d64;
+}

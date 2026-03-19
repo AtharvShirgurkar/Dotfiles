@@ -1,0 +1,8 @@
+mode=drun
+show=drun
+allow_images=true
+insensitive=true
+matching=multi-contains
+width=800
+height=400
+location=center

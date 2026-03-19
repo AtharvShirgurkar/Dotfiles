@@ -1,0 +1,193 @@
+# Scid resolver configuration
+# Version: 5.1.2.19-17-gcc35b698, Feb 09 2026
+# This file contains commands in the Tcl language format.
+# If you edit this file, you must preserve valid Tcl
+# format or it will not set your Scid options properly.
+#
+# Define how to interpret IDs stored in ssp files. Each ID has to
+# have a unique page to link to. It is currently not possible to link
+# to more than one page by means of a single ID, or to get more
+# than one button by any ID. FIDEID is an exception, see below
+#
+# Syntax of the following array's list entries:
+#
+# IDName: the tag to search for e.g. FIDEID searches for
+#         %Bio FIDEID -lines in the spellcheck file
+#      special IDNames:
+#         useFIDEID : Use the FIDEID
+#         useNAMEF: Use the name of the player as ID in the order First Name Last Namee.q. Magnus Carlsen
+#         useNAMEL: Use the name of the player as ID in the order Last Name,First Name e.q. Carlsen,Magnus
+#                 add an additional sign after the F/L to select a delimiter, see examples below 
+# link target url: %ID% is replaced by the ID, %LANG% is replaced with the selected language code
+# icon name: the icons are specified below as base64 encoded images
+# Link text: what to display in pinfo window
+
+#resolver without icons
+set idlink(0) {{VIAF} {http://viaf.org/%ID%} {} {VIAF}}
+set idlink(1) {{FIDEID} {http://ratings.fide.com/card.phtml?event=%ID%} {} {FIDE}}
+set idlink(2) {{ICCFID} {https://www.iccf.com/player?id=%ID%} {} {ICCF}}
+set idlink(3) {{PND} {https://portal.dnb.de/opac.htm?query=%ID%\&method=simpleSearch} {} {PND}}
+set idlink(4) {{BCF} {http://ecfgrading.org.uk/new/menu.php?ref=%ID%} {} {ECF}}
+#set idlink(5) {{useNAMEF+} {https://tools.wmflabs.org/persondata/index.php?name=%ID%} {} {PS}}
+#set idlink(6) {{useNAMEF_} {http://%LANG%.wikipedia.org/wiki/%ID%} {} {Wikipedia}}
+#set idlink(7) {{useNAMEF_} {https://www.365chess.com/players/%ID%} {} {365Chess}}
+#set idlink(8) {{useNAMEF-} {https://chess.com/players/%ID%} {} {chess.com}}
+#set idlink(9) {{useNAMEL_} {https://players.chessbase.com/de/player/%ID%} {} {CB}}
+
+#resolver with icons
+#set idlink(0) {{VIAF} {http://viaf.org/%ID%} {VIAF} viaflnk }
+#set idlink(1) {{FIDEID} {http://ratings.fide.com/card.phtml?event=%ID%} fidelnk {FIDE}}
+#set idlink(2) {{ICCFID} {https://www.iccf.com/player?id=%ID%} iccflnk {ICCF}}
+#set idlink(3) {{PND} {https://portal.dnb.de/opac.htm?query=%ID%\&method=simpleSearch} dnblnk {PND}}
+#set idlink(4) {{BCF} {http://ecfgrading.org.uk/new/menu.php?ref=%ID%} bcflnk {ECF}}
+#set idlink(5) {{useNAMEF+} {https://tools.wmflabs.org/persondata/index.php?name=%ID%} pslnk {PS}}
+#set idlink(6) {{useNAMEF_} {http://%LANG%.wikipedia.org/wiki/%ID%} wikiplnk {Wikipedia}}
+#set idlink(7) {{useNAMEF_} {https://www.365chess.com/players/%ID%} chess365lnk {365Chess}}
+#set idlink(8) {{useNAMEF-} {https://chess.com/players/%ID%} chesslnk {chess.com}}
+#set idlink(9) {{useNAMEL_} {https://players.chessbase.com/de/player/%ID%} cblnk {CB}}
+
+#
+# Icons for the links
+#
+
+image create photo iccflnk -data {
+   R0lGODlhEAAQAMZqAAAA/wEB/wMD/wQE/wUF/wYG/wcH/wgI/woK/wsL/wwM/xAQ/xER/xIS/xMT
+   /xQU/xYW/xcX/xgY/xkZ/xoa/xsb/x4e/yEh/yIi/yUl/yYm/ycn/ykp/zIy/zQ0/zY2/zc3/zo6
+   /zs7/zw8/z09/0ZG/0lJ/01N/1hY/1lZ/1pa/1tb/1xc/2Nj/2Vl/2lp/2pq/3R0/3V1/3Z2/3d3
+   /3h4/3t7/3x8/39//4SE/4WF/4uL/42N/4+P/5CQ/5KS/5OT/5SU/5WV/5aW/5eX/5iY/5ub/5+f
+   /6Cg/6Gh/6en/6mp/6qq/66u/6+v/7S0/7i4/7u7/729/7+//8DA/8LC/8PD/8rK/8zM/83N/87O
+   /9PT/9fX/9jY/+Pj/+Tk/+bm/+jo/+vr/+zs//Hx//Ly//T0//b2//j4//z8////////////////
+   /////////////////////////////////////////////////////////////////////////yH+
+   EUNyZWF0ZWQgd2l0aCBHSU1QACH5BAEKAH8ALAAAAAAQABAAAAfjgFJTaF86R2dpXjlIZ2JQUFIV
+   GGMnAAVFaCaWRlQKCRULE1cGBwIgWwQIASFSAAAMDBJKAC4XEEwALRcWTwAUKAwTQwA0GQs9ADIZ
+   Dk0ALGmhw8ULPAAzGgvNK2nBQtYjHNUxJBxOABw/3dZcW0YANl1bUa4eod40aWlHADf5rQAegkmT
+   8QIIgBozXvQqoUWgNWM7kmVg0EwFtAlFiE30kWxDA23cJiwBAAODBFwvdvXaFsvKgAcGQGQJEGGA
+   iFYsJYT5ACBAEDMdAAggMi9FGiVMzmhhcYNMGiwrcJQBk6RKmkAAOw==
+}
+image create photo viaflnk -data {
+   R0lGODlhEAAQAIQaAP8AAP8ICP8QEP8YGP8hIf8pKf8xMf85Of9CQv9SUv9aWv9jY/9zc/97e/+E
+   hP+MjP+UlP+cnP+lpf+trf+1tf/Gxv/Ozv/W1v/e3v/v7////////////////////////yH+EUNy
+   ZWF0ZWQgd2l0aCBHSU1QACH5BAEKAB8ALAAAAAAQABAAAAWDoCZm1lVp1ZVhqSWOSnBpEJNlynC+
+   tCA2LwODJ4IENI+M6AKYESWACuXlIBBFFADwVdgSK9bRBCC5ajBOTYYiNWumIguFPSdmledA42JJ
+   8DIHABhYghoqPAxZTgsEEQwTPBILDFEiAhBIeIYOhgBTd0QZCEpZEBcJA2lLFyolKayqGiEAOw==
+}
+
+image create photo bcflnk -data {
+   R0lGODlhEAAQAIQRAAAAAAAAIAAAQAAgYCAgIDAwMABAgEBAQGBgYDBvbwCAgD9/fzCQkH9/f2Cg
+   oDCvr4/Pz////////////////////////////////////////////////////////////yH+EUNy
+   ZWF0ZWQgd2l0aCBHSU1QACwAAAAAEAAQAAAFWmCBjGRZEgixFE3kqqwbHUjCGK1r4zJdGINc5Bfs
+   IRrIpFJJkzUAUCcU0HQ9o9ZpNXIFSKE0mFBs3AnNRqJQbVy6k9uuE/IIxKdOh0Jwx3IDAlQEB4SF
+   hoYEIQA7
+}
+
+image create photo dnblnk -data {
+   R0lGODlhFAAUALMAAAAAAGZmZld/u8zMzP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+   AAAAACH5BAEAAAQALAAAAAAUABQAAARkkMg5BaA4SxHs1RknjB5YdSQJfCGapismvjRLzDTM4vkI
+   BB9e7ze4CHPEIsDT8wUGUAsHuKw9o8YAIUCFXQeWzbNQ4K4s37BkOSCTzWkb4dx2x0F0N9a0ZhfA
+   ciZnanwYMSARAAA7
+}
+
+image create photo pslnk -data {
+   iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
+   WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wIDCS0S6DMvKgAAABl0RVh0Q29tbWVudABDcmVhdGVk
+   IHdpdGggR0lNUFeBDhcAAAKPSURBVDjLrZRbSFRRGIW/vc85Mx6qKcaiiy+CVpLQhSGoiLAb9BAY
+   FBQVUg/NQBGCkfTQQ/ZQVERv0QxCBRVBVAQlSNCFIsEYg9AUFcxiMGsqL6PNjOfs3UOpM4NdLNfr
+   v/bPWazvPzDVCk/GHMxw7z6VPdt3AQABEIGSQcMosbTu9iple6Ft3+nGQbpeLUZI20h/We16/M8J
+   H2jKWrLz5ApmzhWkEu1cPZIAMH+OkrZSdq9lFS1Ip88PQAvHVm4j9OoMWi1T5vQFaPWGtbvKWLRm
+   E9LaipTzUG4RWiVQqgp4CCAB0mCitb+mcOFtoNkDG6o9eZtRbgwo0MIUQClL1r/D9F5Hyj3ARqRR
+   iNYluI5/9KNN/SN350VYd6m9pQL4JsAoHkktZUZ+K0N9o14HuAXiNb0djdw79ywr/t6zcK0aUwCH
+   wXChflDK0hFpnJjjjMRMKJ7Z01HX75s9AMInlJPUcIPaQ/UTFnatmrHICZAalvuFHjjujDSHoHIW
+   PDhx8/hLhu0gqbwq/Sm1n9pVj34FQCAcHG85axAJ3kXjcy0jLV1lGLguoEBIpYSV80YAH4Cj0VAk
+   BiAC4eDXDIMC/JNEWf8IiQtYpko5jswzZ6P/6z4MNZTukbZ12UzGhyvs+TNuCil8/7JJK31/+P3n
+   yrZTd7oAjPjT5s78NUsazGmePO0qW0jx15G1ox43HazdEn/W2lf2tIa3V55gAHx89Lq7oHxlnZNI
+   3pEeMx9oB+JA4e8Wfo7GdvQ3dfQEwkEatp8fbzkQDhINRXIxKAMe/25hNBQRmdhEQ5EJsAkHk4A3
+   o0Hxh+RxoDwairwYAztHKoezPynTP/a3yVQNYE+i6H7g3a/OR/wriKOnN+X6DoYV8zpy6frwAAAA
+   AElFTkSuQmCC
+}
+
+image create photo chess365lnk -data {
+   iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
+   WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wEWESUKAdQSwQAAABl0RVh0Q29tbWVudABDcmVhdGVk
+   IHdpdGggR0lNUFeBDhcAAAStSURBVDjLhZRbbFRlFIW/ff5z5sxMp/ebbZWWBrFAFdQqQYvKk1ED
+   oVGiRgyGRIIxUR9UImj0SY1GQ2rig7eoiZd4SQniJSpaUiRUi5S01AIFxt6wnQ69TWc6Z875fx9A
+   ITHqet5Ze6+9114C0PvYJhp3vgdA4pN3ZPTLXRG3tv7WcNVlG6xIeCWiatABxs+N+FOTnfMjv3/k
+   TSTaJeykVry1y3AR5OgTW1j28hsAnH74LlcvvuYOVV71gq6pXzxbUEnGjRFYISwT4ObS5GcmCSeH
+   8ePH+7wzQ9tmew7vbdq1P9P9wDpWvLsb+Ys5/tSDBSxp2pa9dPH2ZHUDM27RuY4YBIM5X2rEwvUz
+   XDIzQnTgMP7A0WeTHd+/ev3XXalfWlajAIYeucf1lzc/fbb+2u1D1VeSDefjWILn+xit0dqgtSHQ
+   Bt8PyGKTcIvxi8ooUMEa11bWa+0Hf3izfxBlWh+X8eK69aMLr2s9Ub6UEkdTnx6lcHqUaDRCPKPI
+   BYZsYHBtYUGBgyVQEbUY0XlMuUWUZ882b6kuiL/e1dtt/TqaiY4VLXihv7SBWMiioihKNBGnZOAQ
+   SikuLw0x42nOzgcExnBVZZhVNVEaSl08L8dJq4TemuuJVFY+922NVageuXnV2p8bbn8oEythxexx
+   Sk53IzrA5DyUJRR0/8hU3VXEpzzSOUPG10x7mp7xLAOTOdJeQMIupHwyHiuLOmfsPqdqQ79TySXZ
+   HCRGye77DCksxYiF9BzGT88SW3k3E+kAR6C+KERtoYMx8xwcyTCX04gIh4sb1ZrcN3faxyKXrhxO
+   +WR9TbpyIbGNj+MNDlCcGifetI4rTv3EngmPWU/jCBwYTtM3ofgj5ZPMBMx5Ab6GCecyWZVOL7NT
+   kaJqMTCZzvG2LmNt+TzLDrXzR08XVZcvZ2feTfQNphCBpWUh7l1W+LeJ+5NjjM8ZRMCoEFOxsmJ7
+   3o0RCSkqXKElNExtvA8W1BEqr8CN93NvbIIPKlYxPO0RdhRTWU3W14SUhRJBzjvZiOA5UezacHBm
+   jTNYV5Gdpry9jTOdHYgbBhEIApSt2LS9lWO25vhYPluH0kzP+1gihG1ByYW3s/3cpN1y+ouDc3u6
+   63LZeabFRuVfkIQDBkPq+UepdRRLG6+hdvVmPldV5Lzc39MB2IFvCuYSR63EgX0fzOcCAuWAZfFP
+   CFrZeFqYOXKI6t691JZG0BdFgkGoSp7UhanxzyyJxvYh8hsI/woREMGIgNYoES6OGK1srj723eii
+   wd/et0QkBTzJ/0FrQmUVTC25kZPJDOq8GF85XDHYyaLhrm2qn1mrqa3DgNkLPPtffMoNkb36Ftrz
+   lpDNegigLUXp9Ag3HPn85aa2jo8BLICmtv0ZDK8CL/6r6uo6jt64kf7xOWwBLYri2TFuOfThS7G5
+   5A4B07W++Vx8da1fTdOuDm99Y+SHPJN3GlgBxDi3WLEiUbzNz/DmUJgQgUEsXXn21GjzkU+3bmx9
+   ZefC3hNB19pradrdeeESv7Q0c13bfgA6191QpJS6H2hB68b8lk1lrQs2kBxLzEX9dE/N+PFP7vtq
+   xzsNe0/MAHy96R5ue+9jAP4ETQUK89iGnNcAAAAASUVORK5CYII=
+}
+
+image create photo wikiplnk -data {
+   iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
+   WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wEWESoJH0VftAAAABl0RVh0Q29tbWVudABDcmVhdGVk
+   IHdpdGggR0lNUFeBDhcAAAKDSURBVDjLrZQ/SGNLFId/N6zwKrUIqKUgNqIW3kaQdKnFyKJio50h
+   bUBQUAyIpLAVsVLQIrt9RAXRVkJAZDUi2AQjioWuf+5Gc8+3xdP7srsKb3c9MDBzzpyPmTlnfpIk
+   M2szs09mdmNm/Oa4ec5tkyTneZKT9I/+zr5Jch0z+yTpo97HPjtmdiOp9p2AXx0zw3Gcd6EB+uB5
+   nkZGRpTP5wXI933F43E1NDQonU7L8zyFw2FNTk5qb29PmUxGdXV16uvrk+u6SiaTKpfLikQiWlhY
+   kHi2+fl5JJFOp19crKysIIm1tTUALi8vicVi7OzsBHsWFxdJJBLBWmYGwMXFBZ2dnXR1dQXB29tb
+   enp6aG1tpVKpsLW1RSqV4unpCTPj/v6e8fFx8vk8AGb2L/AFOjMzgySy2WwAXV5eRhJzc3Mkk0n2
+   9/eDWKFQYHh4OID9AiyVStTW1tLR0UG1tbS0UF9fz+zsbJAMkEgk2N3d/QEYqq5QU1OTBgcHdXR0
+   pPX19aB6ExMTur6+Vk1NjSTJcRxdXV3p4OBAkUhEwH+lrv5GAKenp0iiv78/OOH09DSNjY20t7dT
+   KpUAiMfjQXGqGfr5bwIMDQ0RDofJ5XIcHh4yOjrKxsYGklhaWuLs7Ize3t5fYG8Cj4+PkcTU1BRj
+   Y2OcnJzgeR7d3d1Eo1EGBgbI5XL/D2hmPDw8EIvFkEQqleLx8RHf98lkMkgiGo1yd3f3qvroLVnK
+   ZrM0NzdTKBSCtywWi7iuy+rqKr7vvwl8VQPPz8/Z3t6mXC4HvkqlwubmJsVi8dXrmtnNm/JVLRjV
+   bfHi/6FVfpKvdxXYUCgU+iLJlfRZ0tc/0cDnXDcUCn35Ds1OQnIj7LXqAAAAAElFTkSuQmCC
+}
+
+image create photo fidelnk -data {
+   iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
+   WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wIEEx02hxDjFwAAABl0RVh0Q29tbWVudABDcmVhdGVk
+   IHdpdGggR0lNUFeBDhcAAAM9SURBVDjLrZRNbJRVFIaf+/NNyzAz/dOxU2vbGRoLVmikLUJUqMBC
+   iFEW4oJo4g9hpyZu0BpNg1GJbpSNiX8LXGDiChUUu7CJrYKJSiASEa1DM0OV32lph5nvu/e7LoZW
+   YwuJpic5q3PPyT3ved9X9Kzf4VjA0NcqOOcIQ4dzlQRACKQAISRSinn7JAscCz5wzsqBMQS+oa42
+   Tro1RWOynkQiijGW4pUyFy5OMpb7k/z4eSKexvM8hJhnYBg6ildKrF2zgq1b+ritI00sWs0f5y8x
+   UbhM78pl+IFhuliiVCqTy5/l4/1DDA59j5QCKSvLip71O1wYOlI31bPr+SdY3rkEayzaU5RKPv0v
+   v8Pw4eO0tTSy7aGNPLjpbhBgTUhVxGP0dJ6du94le3ocIQSqKd090Lm0jT2vPc2t7begpERrRbFY
+   4oVX3uPrb4+jtaIwMcXBwSNorVjd24mnFUII6usSPLzlXk7+OsZodhwZjVbT/+wjpBobMMZgjKUw
+   McVLuz9gaPgo7ZmbWVQdQQhBPB7lwOBhAKy1GGMJrvYM7HyM5Z0ZZM8dHXS0t1QA1RqlJBFPs3nj
+   ava+3c99G3qx1la4GTpqa2IIQEqJUhJPa7RWxGOL2frAOmSmJQVA2Q8o+wF+YFBasWFdN7kz59j7
+   0Zf4gUUIQWAsfXd14QdmNmf6AmO48YY6dH78HABVEW8Op/YfHGG6WAIhEFfXbG5KEvHmF9ilwiRy
+   5LufyJ05C4AxFj8wBIHBOUe6rZFkQ4ymZIJUMkFrcwOffTE8+7sgMBhrCcOQy1NFPvl8BJVs7hr4
+   5bccq1YuJRFfjFIVbEDQdXsGreDEySxCCNauWcH2R++nvq4GTyuUkkgpcc7xxp59FU464Idjp3jq
+   ubf48dipiloCA86RiMfou2cVo2MXyOYukqipZUmmBSVl5Q0wms2z/ZnX+fTQN2itKsSewcAPDHd2
+   L+PxbZtIJKLsfnMfJ37+fVYF1oYIIXj1xSdJtzbx/ocH+Gr46N9uNKOUfwJrjKXsByyqiqC0xLm5
+   tqaVpDA5TXVVBO9fB5pzLq0VWiucY86wiiUKjA2Jx6L/zb6EuLZFiesU9fWK/yf+AkkdVsIfTmX/
+   AAAAAElFTkSuQmCC
+}
+
+image create photo chesslnk -data {
+  iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB60lEQVQ4y42TPWhTYRSGn/PlpqkkWhNQ
+  qxRxrNpJcHNRBCm2Qlsq4lZswcXBSQUnf1BXBX9ARNChUwdFKtTBSRQcOjiJSvEHaay1bXLTJPfe73Ux
+  YNpqc6bD4ZznfXnhGGvU1alhZxYfybWnR0phTYul+GZpIfPqzuiEVu4GawHw8f7OrbnHHRvbC58+/8S5
+  +FBE/SDwbuWqWzm4NnnCEh/3Ly/XCzNf56lU6wQBhYT4wFpaqwAXeseF+D63EPpypQbAcpXEyxVbAgA4
+  C8bBpgHKFTG/5N8GtL1oCXBlcnCTJzoH6gZIOfBeeyNVz47e68+tC/DEPRJjQFqCTJuRSlm7xJkEv2Nd
+  gCN4HVhm92KZ67PzXl9mkyT2nHdK95hSH9YFXOyd8IhiR87y2wrOchvM4cll09nZB6ef+JZClIu7DI6a
+  AWDA8Voc5lsMcSifSLeEdklQi4TQnsjiG2P3B/4f4uWpwS2JokfI9/1Rph4JwEkaqSXVh6fu9jU5STWa
+  S88GApTcBj/UANfqYjHU32Ld3rR537Hu59NP36vJwbdisn3uVzxYCr2FFU8p9PxY8Kj5fZzQsJHKrnqm
+  SpzsrNS9NVIT/6xM4uNOYKkJYF5vzNxJSYcFXQZ5mbIAJisLzZm5GdBLQx8bd78Bl0vnJV3M+YwAAAAA
+  SUVORK5CYII=
+}
+
+image create photo cblnk -data {
+  iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABEElEQVQ4y5WTS07EMBAF69nNBNggsUHc
+  ec7GfUg6fizsiDAfovHGakuprn52BBjANgCS2Nfnzzf+W4WDdRrAuwDb2EYSkris6wEkjgyeLJDvG9zr
+  vNVVIIsX6abJYQYhMQ3IrUwOM4j2C4kBKY8abHvQIbGz0Nf7hzPMjFkNSzUJNEwWmN3r1bAU8916nTJp
+  EwUoDaL0tI0Ak4jS3M9tEDTDVES1wQLRAdFEKyYQbfsIA8KroQ4IfW/b/buPRQEiRYY5IeY9ROr+VTSb
+  Ojo3GbwLMQZkxrQCSZ91sVkr5Oi8yiwjr7x8iQEPG1w95dcUJ/o4ibpJhWzwTDdMYELXBn9+kBTECG4F
+  qklD0A22m/kBwWq4B1MvEREAAAAASUVORK5CYII=
+}

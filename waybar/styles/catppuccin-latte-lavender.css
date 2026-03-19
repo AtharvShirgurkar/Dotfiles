@@ -1,0 +1,182 @@
+/* =============================================================================
+ * CATPPUCCIN LATTE - LAVENDER
+ * =========================================================================== */
+
+* {
+  font-family: "Noto Sans", "Font Awesome 7 Free", "Font Awesome 7 Brands", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+window#waybar {
+  background: #eff1f5; /* Base Color */
+  color: #4c4f69;
+  opacity: 0.95;
+}
+
+#waybar {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+#workspaces {
+  padding: 0 5px;
+  margin: 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  margin: 0 2px;
+  min-width: 0;
+  color: #4c4f69;
+  background-color: #ccd0da; /* Module BG */
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: #eff1f5; /* Text becomes base color on accent background for contrast */
+  background-color: #7287fd; /* Chosen Accent */
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  color: #eff1f5;
+  background-color: #d20f39;
+  font-weight: bold;
+}
+
+#clock {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #ccd0da;
+  color: #4c4f69;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#tray {
+  background-color: #ccd0da;
+  color: #4c4f69;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#tray > .item {
+  padding: 0 5px;
+  color: #4c4f69;
+  min-width: 0;
+}
+
+#tray > .item:hover {
+  background-color: #bcc0cc; /* Hover Color */
+}
+
+#pulseaudio {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #ccd0da;
+  color: #4c4f69;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#pulseaudio.muted {
+  color: #d20f39;
+}
+
+#idle_inhibitor {
+  padding: 2px 12px;
+  margin: 0 2px;
+  background-color: #ccd0da;
+  color: #4c4f69;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#idle_inhibitor.activated {
+  color: #eff1f5;
+  background-color: #7287fd;
+  font-weight: bold;
+}
+
+#idle_inhibitor.deactivated {
+  background-color: #ccd0da;
+  color: #4c4f69;
+}
+
+#battery {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #ccd0da;
+  color: #4c4f69;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#battery.charging {
+  color: #40a02b;
+}
+
+#battery.discharging.warning {
+  color: #df8e1d;
+  font-weight: bold;
+}
+
+#battery.discharging.critical {
+  color: #d20f39;
+  font-weight: bold;
+}
+
+#battery.full {
+  background-color: #ccd0da;
+  color: #40a02b;
+}
+
+#cpu {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #ccd0da;
+  color: #4c4f69;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#cpu.warning {
+  color: #df8e1d;
+  font-weight: bold;
+}
+
+#cpu.critical {
+  color: #d20f39;
+  font-weight: bold;
+  background-color: #bcc0cc;
+}
+
+#scratchpad {
+   padding: 0 10px;
+   margin: 0 2px;
+   min-width: 0;
+   border: none;
+   transition: background-color 0.2s ease;
+   color: #eff1f5;
+   background-color: #7287fd;
+   font-weight: bold;
+}
+
+#scratchpad.empty {
+   color: #4c4f69;
+   background-color: #ccd0da;
+   font-weight: normal;
+}
+
+#clock:hover,
+#tray:hover,
+#pulseaudio:hover,
+#idle_inhibitor:hover,
+#battery:hover,
+#cpu:hover,
+#scratchpad:hover {
+  background-color: #bcc0cc;
+}

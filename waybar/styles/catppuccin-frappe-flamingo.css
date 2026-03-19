@@ -1,0 +1,182 @@
+/* =============================================================================
+ * CATPPUCCIN FRAPPE - FLAMINGO
+ * =========================================================================== */
+
+* {
+  font-family: "Noto Sans", "Font Awesome 7 Free", "Font Awesome 7 Brands", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+window#waybar {
+  background: #303446; /* Base Color */
+  color: #c6d0f5;
+  opacity: 0.95;
+}
+
+#waybar {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+#workspaces {
+  padding: 0 5px;
+  margin: 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  margin: 0 2px;
+  min-width: 0;
+  color: #c6d0f5;
+  background-color: #414559; /* Module BG */
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: #303446; /* Text becomes base color on accent background for contrast */
+  background-color: #eebebe; /* Chosen Accent */
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  color: #303446;
+  background-color: #e78284;
+  font-weight: bold;
+}
+
+#clock {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #414559;
+  color: #c6d0f5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#tray {
+  background-color: #414559;
+  color: #c6d0f5;
+  padding: 0 5px;
+  margin: 0 2px;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#tray > .item {
+  padding: 0 5px;
+  color: #c6d0f5;
+  min-width: 0;
+}
+
+#tray > .item:hover {
+  background-color: #51576d; /* Hover Color */
+}
+
+#pulseaudio {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #414559;
+  color: #c6d0f5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#pulseaudio.muted {
+  color: #e78284;
+}
+
+#idle_inhibitor {
+  padding: 2px 12px;
+  margin: 0 2px;
+  background-color: #414559;
+  color: #c6d0f5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#idle_inhibitor.activated {
+  color: #303446;
+  background-color: #eebebe;
+  font-weight: bold;
+}
+
+#idle_inhibitor.deactivated {
+  background-color: #414559;
+  color: #c6d0f5;
+}
+
+#battery {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #414559;
+  color: #c6d0f5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#battery.charging {
+  color: #a6d189;
+}
+
+#battery.discharging.warning {
+  color: #e5c890;
+  font-weight: bold;
+}
+
+#battery.discharging.critical {
+  color: #e78284;
+  font-weight: bold;
+}
+
+#battery.full {
+  background-color: #414559;
+  color: #a6d189;
+}
+
+#cpu {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #414559;
+  color: #c6d0f5;
+  transition: background-color 0.2s ease;
+  border-radius: 6px;
+}
+
+#cpu.warning {
+  color: #e5c890;
+  font-weight: bold;
+}
+
+#cpu.critical {
+  color: #e78284;
+  font-weight: bold;
+  background-color: #51576d;
+}
+
+#scratchpad {
+   padding: 0 10px;
+   margin: 0 2px;
+   min-width: 0;
+   border: none;
+   transition: background-color 0.2s ease;
+   color: #303446;
+   background-color: #eebebe;
+   font-weight: bold;
+}
+
+#scratchpad.empty {
+   color: #c6d0f5;
+   background-color: #414559;
+   font-weight: normal;
+}
+
+#clock:hover,
+#tray:hover,
+#pulseaudio:hover,
+#idle_inhibitor:hover,
+#battery:hover,
+#cpu:hover,
+#scratchpad:hover {
+  background-color: #51576d;
+}

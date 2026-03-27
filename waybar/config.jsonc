@@ -162,10 +162,14 @@
     "format-icons": {
       "activated": "",
       "deactivated": ""
-    }
+    },
+    "on-click": "bash -c '[ -f /tmp/waybar_inhibitor_active ] && rm /tmp/waybar_inhibitor_active || touch /tmp/waybar_inhibitor_active'",
+    "tooltip": true,
+    "tooltip-format-activated": "Inhibitor Active (Lid &amp; Idle)",
+    "tooltip-format-deactivated": "Inhibitor Inactive"
   },
   "pulseaudio": {
-    "format": "{volume}% {icon}",
+    "format": "{volume}% {icon} {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",

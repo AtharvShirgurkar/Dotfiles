@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# 1. Check if an external monitor is connected
+# 'jq length' counts the active displays. If > 1, an external monitor is plugged in.
+NUM_OUTPUTS=$(swaymsg -t get_outputs | jq length)
+
+if [ "$NUM_OUTPUTS" -gt 1 ]; then
+    echo "External monitor connected. Ignoring lid close."
+    # Optional: Disable the laptop screen so the external monitor becomes the sole display
+    swaymsg output eDP-1 disable
+    exit 0
+fi
+
+# 2. Check the Waybar inhibitor state
+# We will set up Waybar to create this file when the inhibitor is turned on.
+if [ -f "/tmp/waybar_inhibitor_active" ]; then
+    echo "Inhibitor is active. Ignoring lid close."
+    exit 0
+fi
+
+# 3. If neither condition is met, suspend the laptop
+systemctl suspend

@@ -55,7 +55,7 @@
     }
   },
   "sway/window": {
-    "format": " {title} ",
+    "format": " {title:.40} ",
     "expand": true,
     "icon": true,
     "icon-size": 20,
@@ -115,7 +115,7 @@
     }
   },
   "hyprland/window": {
-    "format": " {title} ",
+    "format": " {title:.40} ",
     "expand": true,
     "icon": true,
     "icon-size": 20,
